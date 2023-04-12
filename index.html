@@ -7,47 +7,78 @@
   <title>Document</title>
   <link rel="manifest" href="./manifest.json">
   <link rel="stylesheet" href="https://supsok.github.io/gbsw/touchstrap/css/touchstrap.css">
+  <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:opsz,wght,FILL,GRAD@48,400,0,0" />
 </head>
 
 <body>
 
-  <header class="bar bar-nav">
-    <div class="d-flex justify-content-between">
-      <button class="btn btn-secondary">
-        Left
-      </button>
-      <button class="btn btn-secondary">
-        Right
-      </button>
-      <h1 class="title">앱제목</h1>
+<header class="bar bar-nav bar-light bg-faded">
+  <a class="icon pull-left" role="button">
+    <span class="material-symbols-outlined">
+    arrow_back_ios
+    </span>
+  </a>
 
-    </div>
+  <a class="icon pull-right" role="button">
+    <span class="material-symbols-outlined">
+    add
+    </span>
+  </a>
+  <h1 class="title">경북소프트웨어고</h1>
+</header>
 
-  </header>
+<div class="bar bar-standard bar-header-secondary bar-light bg-faded">
+  <button class="btn btn-secondary btn-block">검색하기</button>
+</div>
 
-  <!-- Block button in standard bar fixed below top bar -->
-    <div class="bar bar-standard bar-header-secondary">
-      <button class="btn btn-secondary btn-block">Block level button</button>
-    </div>
+<nav class="bar bar-tab bar-dark bg-primary">
+  <a class="tab-item active" role="button">
+    홈
+  </a>
+  <a class="tab-item" role="button">
+    프로필
+  </a>
+  <a class="tab-item" role="button">
+    검색
+  </a>
+</nav>
 
-    <!-- Block button in standard bar fixed above the footer -->
-    <div class="bar bar-standard bar-footer-secondary">
-      <button class="btn btn-secondary btn-block">Block level button</button>
-    </div>
+<div class="content">
 
-    <div class="bar bar-standard bar-footer">
-      <a class="icon icon-compose pull-left" role="button"></a>
-      <a class="icon icon-gear pull-right" role="button"></a>
-    </div>
+  <ul class="table-view">
+    <li class="table-view-cell">Item 1</li>
+    <li class="table-view-cell">Item 2</li>
+    <li class="table-view-divider">Divider</li>
+    <li class="table-view-cell">Item 3</li>
+  </ul>
 
-  <main class="content">
-    
-    <div class="p-1">
-      안녕하세요.
-    </div>
-    
-    
-  </main>
+
+  <ul class="table-view">
+    <li class="table-view-cell">
+      Item 1
+      <div data-toggle="switch" class="switch">
+        <div class="switch-handle"></div>
+      </div>
+    </li>
+    <li class="table-view-cell">
+      Item 2
+      <div data-toggle="switch" class="switch active">
+        <div class="switch-handle"></div>
+      </div>
+    </li>
+    <li class="table-view-cell">
+      Item 3
+      <div data-toggle="switch" class="switch">
+        <div class="switch-handle"></div>
+      </div>
+    </li>
+  </ul>
+
+
+</div>
+
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/1.12.4/jquery.min.js"></script>
+<script src="https://supsok.github.io/gbsw/touchstrap/js/touchstrap.js"></script>
 
   <script>
   if ('serviceWorker' in navigator) {
