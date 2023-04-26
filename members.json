@@ -1,0 +1,20 @@
+[
+  {
+    "name": "홍길동",
+    "email" : "test@test.com",
+    "addr" : "의성군",
+    "age" : 19
+  },
+  {
+    "name": "김영희",
+    "email" : "gbsw@test.com",
+    "addr" : "안동시",
+    "age" : 19
+  },
+  {
+    "name": "이철수",
+    "email" : "gbsw2@test.com",
+    "addr" : "대구시",
+    "age" : 19
+  }
+]
