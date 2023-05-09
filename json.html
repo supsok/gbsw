@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>json 테스트</title>
+  <link rel="stylesheet" href="https://supsok.github.io/gbsw/touchstrap/css/touchstrap.css">
+</head>
+<body>
+
+  <section class="page center">
+    <header class="bar bar-nav">
+      <h1 class="title">경소고</h1>
+    </header>
+    <main class="content">
+      <ul class="table-view"></ul>
+    </main>
+  </section>
+
+
+  <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.12.4/jquery.min.js"></script>
+  <script src="https://supsok.github.io/gbsw/touchstrap/js/touchstrap.js"></script>
+
+  <script>
+
+  fetch('https://supsok.github.io/gbsw/members.json')
+          .then(response => response.json())
+          .then(members => {
+            console.log(members)
+
+            members.forEach((member) => {
+              console.log(member.name);
+              let html = `<li class="table-view-cell">
+                  <a class="navigate-right" data-toggle="modal" data-target="#modal01" data-email="${member.email}">
+                    <span class="badge badge-pill">5</span>
+                    <span data-role="name">${member.name}</span>
+                  </a>
+                </li>`
+                $('.table-view').append(html)
+            });
+
+
+          } )
+
+  </script>
+
+</body>
+</html>

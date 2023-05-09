@@ -4,81 +4,76 @@
   <meta charset="UTF-8">
   <meta http-equiv="X-UA-Compatible" content="IE=edge">
   <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
-  <title>Document</title>
+  <title>나의앱</title>
   <link rel="manifest" href="./manifest.json">
   <link rel="stylesheet" href="https://supsok.github.io/gbsw/touchstrap/css/touchstrap.css">
-  <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:opsz,wght,FILL,GRAD@48,400,0,0" />
+  <link rel="stylesheet" href="./style.css">
 </head>
 
 <body>
 
-<header class="bar bar-nav bar-light bg-faded">
-  <a class="icon pull-left" role="button">
-    <span class="material-symbols-outlined">
-    arrow_back_ios
-    </span>
-  </a>
+  <section id="page1">
+    <header class="bar bar-nav">
+      <h1 class="title">첫번째페이지</h1>
+    </header>
+  
+    <main class="content">
 
-  <a class="icon pull-right" role="button">
-    <span class="material-symbols-outlined">
-    add
-    </span>
-  </a>
-  <h1 class="title">경북소프트웨어고</h1>
-</header>
-
-<div class="bar bar-standard bar-header-secondary bar-light bg-faded">
-  <button class="btn btn-secondary btn-block">검색하기</button>
-</div>
-
-<nav class="bar bar-tab bar-dark bg-primary">
-  <a class="tab-item active" role="button">
-    홈
-  </a>
-  <a class="tab-item" role="button">
-    프로필
-  </a>
-  <a class="tab-item" role="button">
-    검색
-  </a>
-</nav>
-
-<div class="content">
-
-  <ul class="table-view">
-    <li class="table-view-cell">Item 1</li>
-    <li class="table-view-cell">Item 2</li>
-    <li class="table-view-divider">Divider</li>
-    <li class="table-view-cell">Item 3</li>
-  </ul>
-
-
-  <ul class="table-view">
-    <li class="table-view-cell">
-      Item 1
-      <div data-toggle="switch" class="switch">
-        <div class="switch-handle"></div>
+      <div class="content-padded">
+        <button type="button" class="btn btn-secondary" data-toggle="modal" data-target="#modal01">
+          버튼
+        </button>
       </div>
-    </li>
-    <li class="table-view-cell">
-      Item 2
-      <div data-toggle="switch" class="switch active">
-        <div class="switch-handle"></div>
-      </div>
-    </li>
-    <li class="table-view-cell">
-      Item 3
-      <div data-toggle="switch" class="switch">
-        <div class="switch-handle"></div>
-      </div>
-    </li>
-  </ul>
+
+      <ul class="table-view">
+        <li class="table-view-cell">
+          <a class="">
+            <span class="media-object pull-left pt-3 px-2">1</span>
+            <img class="media-object pull-left mr-3" src="http://placehold.it/110x60">
+            <div class="media-body ">
+              첫영상
+              <p><small class="text-muted">tubeMate</small></p>
+            </div>
+          </a>
+        </li>
+        <li class="table-view-cell">
+          <a class="">
+            <span class="media-object pull-left pt-3 px-2">2</span>
+            <img class="media-object pull-left mr-3" src="http://placehold.it/110x60">
+            <div class="media-body ">
+              첫영상
+              <p><small class="text-muted">tubeMate</small></p>
+            </div>
+          </a>
+        </li>
+        <li class="table-view-cell">
+          <a class="">
+            <span class="media-object pull-left pt-3 px-2">3</span>
+            <img class="media-object pull-left mr-3" src="http://placehold.it/110x60">
+            <div class="media-body ">
+              첫영상
+              <p><small class="text-muted">tubeMate</small></p>
+            </div>
+          </a>
+        </li>
+      </ul>
+    </main>
+  </section>
+
+  <section class="modal" id="modal01">
+    <header class="bar bar-nav">
+      <a class="icon icon-left-nav pull-left" role="button" data-history="back"></a>
+      <h1 class="title" data-role="title">모달</h1>
+    </header>
+  
+    <main class="content">
+      모달입니다.   
+    </main>
+  </section>
 
 
-</div>
 
-<script src="https://ajax.googleapis.com/ajax/libs/jquery/1.12.4/jquery.min.js"></script>
-<script src="https://supsok.github.io/gbsw/touchstrap/js/touchstrap.js"></script>
+
 
   <script>
   if ('serviceWorker' in navigator) {
@@ -90,7 +85,53 @@
               .catch(e => console.log(e));
       });
   }
+
   </script>
 
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/1.12.4/jquery.min.js"></script>
+<script src="https://supsok.github.io/gbsw/touchstrap/js/touchstrap.js"></script>
+
+
+<script>
+
+
+
+
+$('#modal01').on('shown.rc.modal', function () {
+  //모달이 열린후
+  const modal = $(this)
+  console.log('모달이 열렸습니다.');
+  fetch('https://mdn.github.io/learning-area/javascript/oojs/json/superheroes.json')
+  .then(response => response.json())
+  .then(data => {
+    console.log('data',data.formed);
+    modal.find('[data-role="title"]').text(data.formed)
+  })
+  .catch(error => console.error(error));
+
+})
+  
+
+</script>
+
+<script type="module">
+  // Import the functions you need from the SDKs you need
+  import { initializeApp } from "https://www.gstatic.com/firebasejs/9.21.0/firebase-app.js";
+  // TODO: Add SDKs for Firebase products that you want to use
+  // https://firebase.google.com/docs/web/setup#available-libraries
+
+  // Your web app's Firebase configuration
+  const firebaseConfig = {
+    apiKey: "AIzaSyCSsJC1vNjpwl96546lKv4MW-C5rkBqlFs",
+    authDomain: "gbsw-2e776.firebaseapp.com",
+    projectId: "gbsw-2e776",
+    storageBucket: "gbsw-2e776.appspot.com",
+    messagingSenderId: "876497268413",
+    appId: "1:876497268413:web:a6928e98970d3b9d9fd1d4"
+  };
+
+  // Initialize Firebase
+  const app = initializeApp(firebaseConfig);
+</script>
 </body>
 </html>

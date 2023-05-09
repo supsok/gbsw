@@ -1,0 +1,87 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>목록 테스트</title>
+  <link rel="stylesheet" href="https://supsok.github.io/gbsw/touchstrap/css/touchstrap.css">
+</head>
+<body>
+  
+  <section class="page center">
+    <header class="bar bar-nav">
+      <h1 class="title">경소고</h1>
+    </header>
+    <main class="content">
+      <ul class="table-view">
+        <li class="table-view-cell media">
+          <a class="navigate-right" 
+             data-toggle="modal" 
+             data-target="#modal01" 
+             data-subject="집주인 바뀌어도 모르는 ‘임차인’···‘전세사기’ 어떻게 막나" 
+             data-photo="https://img2.daumcdn.net/thumb/R658x0.q70/?fname=https://t1.daumcdn.net/news/202304/26/donga/20230426130633032qygs.jpg" 
+             data-article="‘혹시나’하는 마음에 등기부등본을 새로 떼어봤다가 자신도 모르게 반년 전에 집주인이 바뀐 사실을 안 것이다. 그는 전 집주인에게 수십 여 차례 전화와 문자를 했지만 연락이 닿지 않았다. 공인중개소를 통해 새 집주인과 연락이 된 A씨는 “계약갱신을 하지 않겠다. 9월 계약 만료 때 나가겠다”고 통보했다. 돌아온 답은 그러나 “나도 요즘 힘들다. 돌려 줄 돈이 없으니 계속 살던지 법대로 하라”는 말이었다. 그는 전세사기피해자모임을 통해 내용증명을 보내는 법을 알아보고 있다.">
+            <img class="media-object pull-left" src="https://img2.daumcdn.net/thumb/R658x0.q70/?fname=https://t1.daumcdn.net/news/202304/26/donga/20230426130633032qygs.jpg" style="width:60px;height:60px">
+            <div class="media-body">
+              1월 상업시설 낙찰가율 역대 최고치…주택은 '최저수준'
+              <p>지난 1월 전국 상업·업무시설 평균 경매 낙찰가율이 역대 최고치를 기록한 것으로 나타났다. 반면 주거시설은 최근 5년 내 최저치를 보였다.</p>
+            </div>
+          </a>
+        </li>
+        <li class="table-view-cell media">
+          <a class="navigate-right" data-title="집주인 바뀌어도 모르는 ‘임차인’···‘전세사기’ 어떻게 막나" data-body="‘혹시나’하는 마음에 등기부등본을 새로 떼어봤다가 자신도 모르게 반년 전에 집주인이 바뀐 사실을 안 것이다. 그는 전 집주인에게 수십 여 차례 전화와 문자를 했지만 연락이 닿지 않았다. 공인중개소를 통해 새 집주인과 연락이 된 A씨는 “계약갱신을 하지 않겠다. 9월 계약 만료 때 나가겠다”고 통보했다. 돌아온 답은 그러나 “나도 요즘 힘들다. 돌려 줄 돈이 없으니 계속 살던지 법대로 하라”는 말이었다. 그는 전세사기피해자모임을 통해 내용증명을 보내는 법을 알아보고 있다.">
+            <img class="media-object pull-left" src="https://img1.daumcdn.net/thumb/R658x0.q70/?fname=https://t1.daumcdn.net/news/202304/26/khan/20230426124510762wxpo.jpg" style="width:60px;height:60px">
+            <div class="media-body">
+              집주인 바뀌어도 모르는 ‘임차인’···‘전세사기’ 어떻게 막나
+              <p>‘혹시나’하는 마음에 등기부등본을 새로 떼어봤다가 자신도 모르게 반년 전에 집주인이 바뀐 사실을 안 것이다. </p>
+            </div>
+          </a>
+        </li>
+        <li class="table-view-cell media">
+          <a class="navigate-right">
+            <img class="media-object pull-left" src="https://img3.daumcdn.net/thumb/R658x0.q70/?fname=https://t1.daumcdn.net/news/202304/26/newsis/20230426101927543dpok.jpg" style="width:60px;height:60px">
+            <div class="media-body">
+              러시아, 제2차 세계대전 전승절 앞두고 열병식 리허설
+              <p>러시아군이 25일(현지시간) 러시아 상트페테르부르크 드보르소바야 광장에서 오는 5월 9일 열리는 제2차 세계대전 전승 78주년 기념 열병식을 앞두고 리허설을 했다.</p>
+            </div>
+          </a>
+        </li>
+      </ul>
+    </main>
+  </section>
+
+  <section class="modal" id="modal01">
+    <header class="bar bar-nav">
+      <h1 class="title">기사보기</h1>
+    </header>
+    <main class="content">
+      <div class="content-padded">
+        <h3 class="subject"></h3>
+        <img src="" alt="" class="img-fluid mb-3">
+        <article></article>
+      </div>
+      
+
+    </main>
+  </section>
+
+  <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.12.4/jquery.min.js"></script>
+  <script src="https://supsok.github.io/gbsw/touchstrap/js/touchstrap.js"></script>
+
+  <script>
+    $('#modal01').on('show.rc.modal', function(event) {
+      const button = $(event.relatedTarget) 
+      const subject = button.data('subject')
+      const photo = button.data('photo')
+      const article = button.data('article') 
+      const modal = $(this)
+      modal.find('h3').text(subject)
+      modal.find('img').attr('src',photo)
+      modal.find('article').text(article)
+    })
+
+  </script>
+
+</body>
+</html>

@@ -1,0 +1,28 @@
+
+<script>
+
+fetch('JSON URL을 입력')
+  .then(response => response.json())
+  .then(data => console.log(data))
+  .catch(error => console.error(error));
+
+
+
+  $('#myModal').on('shown.rc.modal', function () {
+    //모달이 열린후
+  })
+
+  document.getElementById("myModal").addEventListener("shown.rc.modal", function() {
+  // 모달이 열린 후
+  });
+
+  $('#myButton').on('click', function() {
+    console.log('버튼이 클릭되었습니다.');
+  });
+
+  document.getElementById('myButton').addEventListener('click', function() {
+    console.log('버튼이 클릭되었습니다.');
+  });
+
+</script>
+

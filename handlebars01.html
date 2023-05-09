@@ -1,0 +1,8 @@
+<!-- CDN에 Handlebars 넣어서 사용함 -->
+<script src="https://cdn.jsdelivr.net/npm/handlebars@latest/dist/handlebars.js"></script>
+<script>
+  // 템플릿을 컴파일함
+  var template = Handlebars.compile("Handlebars <b>{{doesWhat}}</b>");
+  // 컴파일된 템플릿을 실행하고, 콘솔로그로 출력해서 결과를 확인함
+  console.log(template({ doesWhat: "rocks!" }));
+</script>
